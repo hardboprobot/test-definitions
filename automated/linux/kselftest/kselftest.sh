@@ -86,6 +86,8 @@ while getopts "c:T:t:s:u:p:L:S:b:g:e:h" opt; do
            elif [ "${OPTARG##*.}" = "yaml" ]; then
              # yaml skipfile; use skipgen to generate a skipfile
              SKIPFILE_YAML="${SCRIPTPATH}/${OPTARG}"
+           elif [ "${OPTARG}" = "" ]; then
+             SKIPFILE=""
            else
              # Regular LTP skipfile
              SKIPFILE="${SCRIPTPATH}/${OPTARG}"
